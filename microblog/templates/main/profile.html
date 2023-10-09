@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="userProfile">
+        <img id="userIcon" src="{{ url_for('static', filename='profile.png') }}">
+        <h1>{{ posts[0].user.name }}</h1>
+        <input type="button" class="submit-center" fname="wantToFollow" value="Follow">
+    </div>
+    <section>
+        <h2>Latest posts from {{ posts[0].user.name }}</h2>
+        {% include 'posts_template.html' %}
+    </section>
+
+{% endblock %}
